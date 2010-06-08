@@ -1,0 +1,4 @@
+#summary Using GWT YouTube API in sample projects.
+#labels GWT,YouTube,Showcase
+
+http://gwt-youtube-api.appspot.com/com.google.gdata.Showcase/Showcase.html
