@@ -1,7 +1,7 @@
 #summary Basic steps to get started with yousing YouTube API in GWT application
 #labels Featured,Introduction,GWT,YouTubeAPI
 
-= Using YouTube API in GWT application =
+= Using `YouTube` API in GWT application =
 
 You can use YouTube API in our GWT application in a few steps:
  # Download newest version of the library in 2 forms - first JAR (gwt-youtube-api-{version}.jar) contains compiled .class files and resources, second JAR (gwt-youtube-api-{version}-sources.jar)
@@ -128,4 +128,3 @@ youTubeEmbeddedPlayer.setWidth(width + "px");
 youTubeEmbeddedPlayer.setHeight(height + "px");
 RootPanel.get().add(youTubeEmbeddedPlayer);
 }}}
-
