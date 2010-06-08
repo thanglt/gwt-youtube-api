@@ -3,7 +3,7 @@
 
 = Using `YouTube` API in GWT application =
 
-You can use YouTube API in our GWT application in a few steps:
+You can use `YouTube` API in our GWT application in a few steps:
  # Download newest version of the library in 2 forms - first JAR (gwt-youtube-api-{version}.jar) contains compiled .class files and resources, second JAR (gwt-youtube-api-{version}-sources.jar)
  # If you are using maven, add this 2 dependencies to your project
 {{{
@@ -35,7 +35,7 @@ Project is supposed to be as complementary product to [http://code.google.com/p/
  * Language
  * AjaxLoader
  
-You see that? YouTube service is missing, so thats the reason why to create this project. But maybe another question, why to make another project instead of extending existing one? Because gwt-google-apis are only wrappers over the javascript client gdata library, but this also does not contains YouTube services. Why? I don't know, ask Google directly :). So these were reasons for creating GWT YouTube APIs project and it hase one more advantage in comparision with JS wrappers for GWT - you know the what is the correct answer?
+You see that? `YouTube` service is missing, so thats the reason why to create this project. But maybe another question, why to make another project instead of extending existing one? Because gwt-google-apis are only wrappers over the javascript client gdata library, but this also does not contains `YouTube` services. Why? I don't know, ask Google directly :). So these were reasons for creating GWT `YouTube` APIs project and it hase one more advantage in comparision with JS wrappers for GWT - you know the what is the correct answer?
 
 * Solution is completly written in Java/GWT and each method and variable can be debugged *
 
@@ -71,7 +71,7 @@ protected static class SourceState {
 }
 }}}
 
-And compare it with new one, which you can find in GWT YouTube API project
+And compare it with new one, which you can find in GWT `YouTube` API project
 
 {{{
 @JsonObject
@@ -110,18 +110,18 @@ public static class SourceState {
 
 You see that? Only difference is using of additional annotation and this makes the migration very easy - just take a data structure from java client project, add required annotations and you are done. With this easy approach, you can migrate also another Google APIs into your project but remember - a lot of basic and shared classes were already migrated in this project, so firstly take a look into the [http://code.google.com/p/gwt-youtube-api/source/browse/#svn/trunk source code].
 
-= YouTube embeded player =
+= `YouTube` embeded player =
 
-YouTube embeded player is also a part of the whole solution and you can use it with added
+`YouTube` embeded player is also a part of the whole solution and you can use it with added
 
 <inherits name="com.google.youtube.Player" />
 
 into your XYZ.gwt.xml file.
 
 This 1 line of code will add a posibility to use GWT embeded player in your GWT application for playing youtube videos and you can use it as normal GWT widget.
-You can set-up all parameters defined in [http://code.google.com/intl/sk/apis/youtube/player_parameters.html YouTube Embedded Player Parameters] documentation.
+You can set-up all parameters defined in [http://code.google.com/intl/sk/apis/youtube/player_parameters.html `YouTube` Embedded Player Parameters] documentation.
 
-Most easiest way how to use YouTube player:
+Most easiest way how to use `YouTube` player:
 {{{
 YouTubeEmbeddedPlayer youTubeEmbeddedPlayer = new YouTubeEmbeddedPlayer(videoId);
 youTubeEmbeddedPlayer.setWidth(width + "px");
