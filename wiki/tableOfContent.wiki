@@ -2,4 +2,4 @@
 
 [GettingStarted Getting started]
 
-[Showcase GWT YouTube Showcase]
+[SampleApplication GWT YouTube Samples]
