@@ -1,0 +1,29 @@
+#summary How to build project from sources
+
+= Prerequisites =
+ # JDK 1.6+
+ # Maven [2.0.9,> 
+
+= Steps =
+ # Download sources from http://gwt-youtube-api.googlecode.com/svn/trunk/ or specific tag
+ # Add following URL as your [http://maven.apache.org/settings.html release repository] in settings.xml file http://gwt-youtube-api.googlecode.com/svn/releases-repository
+{{{
+<profiles>
+    <profile>
+      ...
+      <repositories>
+        <repository>
+          <id>YouTubeReleases</id>
+          <url>http://gwt-youtube-api.googlecode.com/svn/releases-repository</url>
+          <snapshots>
+             <enabled>false</enabled>
+          </snapshots>
+	</repository>
+      </repositories>
+      ...
+    </profile>
+</profiles>
+}}}
+ # run {{{mvn clean install}}}
+ # run {{{mvn eclipse:clean eclipse:eclipse}}} in order to create eclipse projects
+ # import existing project into eclipse
