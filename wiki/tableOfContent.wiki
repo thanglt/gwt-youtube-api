@@ -2,4 +2,6 @@
 
 [GettingStarted Getting started]
 
+[BuildFromSources Build from sources]
+
 [SampleApplication GWT YouTube Samples]
