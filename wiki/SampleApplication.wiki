@@ -13,7 +13,7 @@ Target of this demo is to demonstrate sucessfull comunication with YouTube using
 Here are some screenshots from video
 
 Home demo page:
-[http://gwt-youtube-api.googlecode.com/svn/images/demo_home_small.png]
+[http://gwt-youtube-api.googlecode.com/svn/wiki/images/demo_home_small.png]
 
 Search page from demo:
-[http://gwt-youtube-api.googlecode.com/svn/images/demo_search_small.png]
+[http://gwt-youtube-api.googlecode.com/svn/wiki/images/demo_search_small.png]
