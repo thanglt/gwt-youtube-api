@@ -34,7 +34,7 @@ You can use `YouTube` API in our GWT application in a few steps:
  # Add release and snapshot repositories to the 
    * http://gwt-youtube-api.googlecode.com/svn/releases-repository 
    * http://gwt-youtube-api.googlecode.com/svn/snapshots-repository
-into your [http://gwt-youtube-api.googlecode.com/svn/wiki/files/settings.xml settings.xml]
+   into your [http://gwt-youtube-api.googlecode.com/svn/wiki/files/settings.xml settings.xml]
 
  # Add Google dependency using inherit using following line into your XYZ.gwt.xml
 
