@@ -31,7 +31,11 @@ You can use `YouTube` API in our GWT application in a few steps:
      * http://code.google.com/p/gwt-youtube-api/source/browse/snapshots-repository/sk/seges/acris/acris-client-core/1.0.0-SNAPSHOT/acris-client-core-1.0.0-SNAPSHOT-sources.jar
      * http://code.google.com/p/gwt-youtube-api/source/browse/snapshots-repository/sk/seges/acris/acris-client-core/1.0.0-SNAPSHOT/acris-client-core-1.0.0-SNAPSHOT.jar
      * (Why you still don't use maven ? :) )
- # Add release repository to the http://gwt-youtube-api.googlecode.com/svn/releases-repository into your settings.xml
+ # Add release and snapshot repositories to the 
+   * http://gwt-youtube-api.googlecode.com/svn/releases-repository 
+   * http://gwt-youtube-api.googlecode.com/svn/snapshots-repository
+   into your [http://gwt-youtube-api.googlecode.com/svn/wiki/files/settings.xml settings.xml]
+
  # Add Google dependency using inherit using following line into your XYZ.gwt.xml
 
 <inherits name="com.google.gdata.YouTubeAPI" />
