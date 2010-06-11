@@ -6,7 +6,7 @@
 
 = Steps =
  # Download sources from http://gwt-youtube-api.googlecode.com/svn/trunk/ or specific tag
- # Add following URL as your [http://maven.apache.org/settings.html release repository] in [https://gwt-youtube-api.googlecode.com/svn/wiki/files/settings.xml settings.xml] file http://gwt-youtube-api.googlecode.com/svn/releases-repository
+ # Add following URL as your release repository in [https://gwt-youtube-api.googlecode.com/svn/wiki/files/settings.xml settings.xml] file http://gwt-youtube-api.googlecode.com/svn/releases-repository
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
