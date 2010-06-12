@@ -14,7 +14,7 @@ Here are some screenshots from video
 
 *Home demo page*
 
-<wiki:gadget url="http://gwt-youtube-api.googlecode.com/svn/gadgets/gwt-youtube-api-showcase.xml"/>
+<wiki:gadget url="http://gwt-youtube-api.googlecode.com/svn/gadgets/gwt-youtube-api-showcase.xml" width="650" height="650"/>
 
 *Search page from demo*
 
