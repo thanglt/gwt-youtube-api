@@ -1,9 +1,10 @@
 #summary Table of wiki content
+#labels TOC
 
-* [GettingStarted Getting started]
-* Project
-  * [BuildFromSources Building from sources]
-  * [EmbededPlayer Embeded player]
-  * [GDataAPI YouTube GData API]
-* [SampleApplication GWT YouTube Samples]
-* [GDataMigration Google APIs for GWT]
+ * [GettingStarted Getting started]
+ * Project
+   * [BuildFromSources Building from sources]
+   * [EmbededPlayer Embeded player]
+   * [GDataAPI YouTube GData API]
+ * [SampleApplication GWT YouTube Samples]
+ * [GDataMigration Google APIs for GWT]
