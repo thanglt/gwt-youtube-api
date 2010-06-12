@@ -23,8 +23,6 @@ You can use `YouTube` API in our GWT application in a few steps:
    * If you are not using maven, add this dependencies to your project
      * http://code.google.com/p/gwt-youtube-api/source/browse/releases-repository/com/google/code/gwtx/gwtx/1.5.3/gwtx-1.5.3.jar
      * http://code.google.com/p/gwt-youtube-api/source/browse/releases-repository/com/google/gwt/gwt-math/2.1/gwt-math-2.1.jar
-     * http://code.google.com/p/gwt-youtube-api/source/browse/releases-repository/net/auroris/colorpicker/1.0.0/colorpicker-1.0.0.jar
-     * http://code.google.com/p/gwt-youtube-api/source/browse/releases-repository/net/auroris/colorpicker/1.0.0/colorpicker-1.0.0-sources.jar
      * http://code.google.com/p/gwt-youtube-api/source/browse/snapshots-repository/org/gwt-time/1.0.0-SNAPSHOT/gwt-time-1.0.0-SNAPSHOT.jar
      * http://code.google.com/p/gwt-youtube-api/source/browse/snapshots-repository/sk/seges/acris/acris-json/1.0.0-SNAPSHOT/acris-json-1.0.0-SNAPSHOT-sources.jar
      * http://code.google.com/p/gwt-youtube-api/source/browse/snapshots-repository/sk/seges/acris/acris-json/1.0.0-SNAPSHOT/acris-json-1.0.0-SNAPSHOT.jar
