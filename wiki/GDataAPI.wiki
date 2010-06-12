@@ -1,0 +1,32 @@
+#summary Using Google GData in YouTube API
+
+Did you ever try to use Google API's or did you ever seen how complex gdata structures are? Following class dialog displays only small subset from the whole data structures.
+
+[http://gwt-youtube-api.googlecode.com/svn/wiki/images/gdata_small.png]
+
+You can find complete reference guide on [http://code.google.com/intl/sk/apis/gdata/docs/directory.html API Directory]. Now the only problem is, how to get all this classes in GWT.
+Solution is: copy them all and replace atom processing for JSON processing.
+TODO - describe
+
+== Using Google YouTube API ==
+
+Add GWT inherit to your project
+
+<inherits name="com.google.gdata.YouTubeAPI" />
+
+{{{
+YouTubeManager youTubeManager = new YouTubeManager();
+youTubeManager.retrieveMostRecent(new AsyncCallback<List<VideoEntry>>() {
+	@Override
+	public void onSuccess(List<VideoEntry> result) {
+                //Here it is
+                String videoId = entry.getMediaGroup().getVideoId();
+                showVideo(videoId);
+	}
+
+	@Override
+	public void onFailure(Throwable caught) {
+		GWT.log("Unable to obtain videos from youtube service", caught);
+	}
+});
+}}}
