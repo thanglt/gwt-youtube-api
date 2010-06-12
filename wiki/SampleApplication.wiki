@@ -1,9 +1,9 @@
 #summary Using GWT YouTube API in sample projects.
 #labels GWT,YouTube,Showcase
 
-You can find first and maybe last showcase [http://gwt-youtube-api.appspot.com/com.google.gdata.Showcase/Showcase.html here]:
+You can find first and maybe last showcase [http://gwt-youtube-api.appspot.com/com.google.gdata.showcase.Showcase/Showcase.html here]:
 
-http://gwt-youtube-api.appspot.com/com.google.gdata.Showcase/Showcase.html
+http://gwt-youtube-api.appspot.com/com.google.gdata.showcase.Showcase/Showcase.html
 
 Target of this demo is to demonstrate sucessfull comunication with YouTube using JSON protocol. Demo has 3 modules:
  # Displays most recent and recomended videos on the main page
@@ -14,7 +14,7 @@ Here are some screenshots from video
 
 *Home demo page*
 
-[http://gwt-youtube-api.googlecode.com/svn/wiki/images/demo_home_small.png]
+<wiki:gadget url="http://gwt-youtube-api.googlecode.com/svn/gadgets/gwt-youtube-api-showcase.xml"/>
 
 *Search page from demo*
 
