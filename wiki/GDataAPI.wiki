@@ -159,7 +159,7 @@ public class YtDuration extends ExtensionPoint {
  
 Can you see the difference? New class is very simple and contains annotations representing semantic value of the JSON fields. This annotations are used in JSON deserialization process. Field `seconds` will by automatically filed from JSON field with name `seconds`. If you want to change mapping, just change the value attribute of the Field annotation, e.g. {{{@Field("othername");}}}.
 
-== Using Google YouTube API ==
+== Using Google !YouTube API ==
 
 Add GWT inherit to your project
 
@@ -185,7 +185,7 @@ youTubeManager.retrieveMostRecent(new AsyncCallback<List<VideoEntry>>() {
 You will get the result as part of asynchronous callback in method retrieveMostRecent which will provide you the most recent videos with respect of query page you provided into request parameters.
 {{{YouTubeManager}}} has currently following posibilities:
  * {{{public void retrieveVideo(String textQuery, AsyncCallback<VideoFeed> callback);}}}
-   * Searches for videos on !YouTube reflecting the input query you specified as parameter of the method. This method has another alternative also with QueryPage parameter which provides paging functionality. You can define `startIndex` for the search results and max results which can be returned in the !YouTube response.
+   * Searches for videos on !YouTube reflecting the input query you specified as parameter of the method. This method has another alternative also with !QueryPage parameter which provides paging functionality. You can define `startIndex` for the search results and max results which can be returned in the !YouTube response.
  * {{{public void retrieveTopRated(AsyncCallback<VideoFeed> callback);}}}
    * Provides top rated videos
  * {{{public void retrieveMostRecent(AsyncCallback<VideoFeed> callback);}}}
