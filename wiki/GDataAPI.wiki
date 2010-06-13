@@ -1,12 +1,163 @@
 #summary Using Google GData in YouTube API
 
+= Google API complexity =
+
 Did you ever try to use Google API's or did you ever seen how complex gdata structures are? Following class dialog displays only small subset from the whole data structures.
 
 [http://gwt-youtube-api.googlecode.com/svn/wiki/images/gdata_small.png]
 
-You can find complete reference guide on [http://code.google.com/intl/sk/apis/gdata/docs/directory.html API Directory]. Now the only problem is, how to get all this classes in GWT.
-Solution is: copy them all and replace atom processing for JSON processing.
-TODO - describe
+You can find complete reference guide on [http://code.google.com/intl/sk/apis/gdata/docs/directory.html API Directory]. Now the only problem is, how to get all this classes into GWT.
+
+== API JSON response ==
+
+<table>
+<tr>
+<td>[http://gwt-youtube-api.googlecode.com/svn/wiki/images/jsonview.png]</td>
+<td>For better imagination whats behind GData API, we can take one concrete example from our showcase. After pressing search button, request to the Google !YouTube API is created with specific {{{ALT}}} paramter equals {{{json-in-script}}} value. This means that !YouTube API will respond in *JSON format* and call specific javascript handler. The most important is that the result is in *JSON format* like it is shown on image on left side.
+
+Let's imagine that you want to extract thumbnail for each video entry in the video feed. First you have look at `feed` JSON value - it is mapped into !YouTubeFeed in the Java code and it holds summary information about the feed, like totalResults, itemsPerPage, etc. etc. AND video entries. 
+
+Entry JSON value represents !VideoEntry object in the java code and holds all the information about video, like _title_, _author_, _comments_, etc.   Then we have some special JSON fields with *$* separator, like *media$group* field. This kind of entries are extensible points and represents very nice plugable architecture of the data structure and represents an easy way of attaching specific piece of data into any extensible point. This meas that, !MediaGroup becomes part of the data structure in a JSON responce but in a Java code this classes are completly indenpendent and can be reused and plugged in generic way. So, we have now object !MediaGroup which contains advanced information of the video entry. Here, finally, we can see a list of the thubnails.
+
+Each video contains set of thumbnails with dimensions and they are captured in various video time and for the demonstration purposes we are choosing thumbnail with best resolution.
+
+Can you see the complexity of the data structures? Of course, this was only my lightweight explanation of the GData API and for complete understanding of the structure, please read the official [http://code.google.com/apis/gdata API documentation] or at least [http://code.google.com/intl/sk/apis/youtube/2.0/reference.html YouTube API].
+</td>
+</tr>
+</table>
+
+The question is: How we can handle so many classes and so complex data structure in easy way with minimum of time and effort? This can be done using great work of engineers in Google and their library [http://code.google.com/intl/sk/apis/youtube/2.0/developers_guide_java.html Java client for Google API]. This library has all the java classes already written and well documented so why not to reuse them? Only problem is that java client uses ATOM parsing mechanism and for !JavaScript/GWT code is much better to parse JSON response instead of parsing ATOM. Replacing the parsing mechanism was easy thanks to [http://code.google.com/p/acris/wiki/GWTJsonizer AcrIS JSON] project which allows you to handle JSON deserialization in easy way - only using annotations. 
+We can easily demonstrate this situation YtDuration class which represents duration video field.
+
+== JSON data support ==
+
+<table><tr>
+<td>
+*Original class in !YouTube client*
+{{{
+import com.google.gdata.data.AbstractExtension;
+import com.google.gdata.data.AttributeGenerator;
+import com.google.gdata.data.AttributeHelper;
+import com.google.gdata.data.ExtensionDescription;
+import com.google.gdata.util.ParseException;
+
+/**
+ * Duration class.
+ *
+ * This completes the duration field in
+ * {@link com.google.gdata.data.media.mediarss.MediaContent} and is
+ * useful when there is no MediaContent.
+ *
+ * This tag should go inside MediaGroup, next to {@code media:player}
+ *
+ * 
+ */
+@ExtensionDescription.Default(
+    nsAlias = YouTubeNamespace.PREFIX,
+    nsUri = YouTubeNamespace.URI,
+    localName = "duration"
+)
+public class YtDuration extends AbstractExtension {
+  private long seconds;
+
+  /** Creates an empty duration tag. */
+  public YtDuration() {
+
+  }
+
+  /** Creates and initializes a duration tag. */
+  public YtDuration(long seconds) {
+    this.seconds = seconds;
+  }
+
+  /** Gets duration in seconds. */
+  public long getSeconds() {
+    return seconds;
+  }
+
+  /** Sets duration in seconds. */
+  public void setSeconds(long seconds) {
+    this.seconds = seconds;
+  }
+
+  @Override
+  protected void putAttributes(AttributeGenerator generator) {
+    generator.put("seconds", seconds);
+  }
+
+  @Override
+  protected void consumeAttributes(AttributeHelper helper)
+      throws ParseException {
+    seconds = helper.consumeLong("seconds", true);
+  }
+}
+}}}
+</td>
+<td>
+*Modified class in GWT !YouTube client*
+{{{
+import sk.seges.acris.json.client.annotation.Field;
+import sk.seges.acris.json.client.annotation.JsonObject;
+import sk.seges.acris.json.client.extension.ExtensionPoint;
+
+/**
+ * Duration class.
+ *
+ * This completes the duration field in
+ * {@link com.google.gdata.data.media.mediarss.MediaContent} and is
+ * useful when there is no MediaContent.
+ *
+ * This tag should go inside MediaGroup, next to {@code media:player}
+ *
+ * 
+ */
+@JsonObject(group = YouTubeNamespace.PREFIX, value = "duration")
+public class YtDuration extends ExtensionPoint {
+	
+	@Field
+	private long seconds;
+
+	/** Creates an empty duration tag. */
+	public YtDuration() {
+
+	}
+
+	/** Creates and initializes a duration tag. */
+	public YtDuration(long seconds) {
+		this.seconds = seconds;
+	}
+
+	/** Gets duration in seconds. */
+	public long getSeconds() {
+		return seconds;
+	}
+
+	/** Sets duration in seconds. */
+	public void setSeconds(long seconds) {
+		this.seconds = seconds;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}}}
+</td></tr></table>
+ 
+Can you see the difference? New class is very easy and contains annotations representing semantic value of the JSON fields. This annotations are used in JSON deserialization process.
 
 == Using Google YouTube API ==
 
