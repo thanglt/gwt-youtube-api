@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.acme</groupId>
+	<artifactId>embed-showcase</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>Basic syoutube showcase</name>
+
+	<properties>
+		<gwt.client.module>com.acme.Mygwtyoutube</gwt.client.module>
+		<gwt.client.html>Mygwtyoutube.html</gwt.client.html>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<version>1.2</version>
+
+				<configuration>
+					<gwtVersion>2.0.0</gwtVersion>
+					<logLevel>INFO</logLevel>
+					<port>8890</port>
+					<module>${gwt.client.module}</module>
+					<runTarget>${gwt.client.module}/${gwt.client.html}</runTarget>
+
+					<!-- style>DETAILED</style--><!-- use OBF for prod -->
+					<style>OBF</style><!-- use OBF for prod -->
+					<noServer>false</noServer>
+					<extraJvmArgs>-Xmx724M -Xss16M -Dfile.encoding=utf-8
+						</extraJvmArgs>
+					<debugPort>8990</debugPort>
+					<shellServletMappingURL>/gwt-shell-servlet
+						</shellServletMappingURL>
+					<mergedWebXml>war/WEB-INF/web.xml</mergedWebXml>
+					<webappDirectory>war</webappDirectory>
+					<soyc>false</soyc>
+					<disableCastChecking>true</disableCastChecking>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>mergewebxml</goal>
+							<!--goal>generateAsync</goal-->
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>YouTubeReleases</id>
+			<url>http://gwt-youtube-api.googlecode.com/svn/releases-repository
+			</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+	</repositories>
+	<dependencies>
+
+
+		<!-- GWT dependencies -->
+		<dependency>
+			<groupId>com.google</groupId>
+			<artifactId>gwt-youtube-api</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google</groupId>
+			<artifactId>gwt-youtube-api</artifactId>
+			<classifier>sources</classifier>
+			<version>1.0.2</version>
+		</dependency>
+
+	</dependencies>
+</project>
