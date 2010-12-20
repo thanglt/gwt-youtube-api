@@ -1,0 +1,13 @@
+#summary GWT-Youtube-API release notes
+
+= Current version =
+
+1.0.3-SNAPSHOT
+
+== Changeset ==
+ * Migrated to GWT 2.1.1
+ * Acris libraries migrated to 1.1.0
+   (added new repository to the settings.xml - https://oss.sonatype.org/content/groups/staging/)
+If you have problems with certificate, use [http://code.google.com/p/acris/wiki/Releasing following manual].
+ * Removed gwt-math dependency
+ 
