@@ -22,16 +22,19 @@ You can use `YouTube` API in our GWT application in a few steps:
 }}}
    * If you are not using maven, add this dependencies to your project
      * http://code.google.com/p/gwt-youtube-api/source/browse/releases-repository/com/google/code/gwtx/gwtx/1.5.3/gwtx-1.5.3.jar
-     * http://code.google.com/p/gwt-youtube-api/source/browse/releases-repository/com/google/gwt/gwt-math/2.1/gwt-math-2.1.jar
-     * http://code.google.com/p/gwt-youtube-api/source/browse/snapshots-repository/org/gwt-time/1.0.0-SNAPSHOT/gwt-time-1.0.0-SNAPSHOT.jar
-     * http://code.google.com/p/gwt-youtube-api/source/browse/snapshots-repository/sk/seges/acris/acris-json/1.0.0-SNAPSHOT/acris-json-1.0.0-SNAPSHOT-sources.jar
-     * http://code.google.com/p/gwt-youtube-api/source/browse/snapshots-repository/sk/seges/acris/acris-json/1.0.0-SNAPSHOT/acris-json-1.0.0-SNAPSHOT.jar
-     * http://code.google.com/p/gwt-youtube-api/source/browse/snapshots-repository/sk/seges/acris/acris-client-core/1.0.0-SNAPSHOT/acris-client-core-1.0.0-SNAPSHOT-sources.jar
-     * http://code.google.com/p/gwt-youtube-api/source/browse/snapshots-repository/sk/seges/acris/acris-client-core/1.0.0-SNAPSHOT/acris-client-core-1.0.0-SNAPSHOT.jar
+     * http://code.google.com/p/gwt-youtube-api/source/browse/snapshots-repository/org/gwt-time/1.0.0-SNASHOT/gwt-time-1.0.0-SNAPSHOT.jar
+     * http://gwt-youtube-api.googlecode.com/svn/releases-repository/com/google/gwt/gwt-dnd/3.0.0/gwt-dnd-3.0.0.jar
+     * https://oss.sonatype.org/content/groups/staging/sk/seges/acris/acris-json/1.1.0/acris-json-1.1.0-sources.jar
+     * https://oss.sonatype.org/content/groups/staging/sk/seges/acris/acris-json/1.1.0/acris-json-1.1.0.jar
+     * https://oss.sonatype.org/content/groups/staging/sk/seges/acris/acris-client-core/1.1.0/acris-client-core-1.1.0-sources.jar
+     * https://oss.sonatype.org/content/groups/staging/sk/seges/acris/acris-client-core/1.1.0/acris-client-core-1.1.0.jar
+     * https://oss.sonatype.org/content/groups/staging/sk/seges/acris/acris-widgets/1.1.0/acris-widgets-1.1.0.jar
+     * https://oss.sonatype.org/content/groups/staging/sk/seges/acris/acris-widgets/1.1.0/acris-widgets-1.1.0-sources.jar
      * (Why you still don't use maven ? :) )
  # Add release and snapshot repositories to the 
    * http://gwt-youtube-api.googlecode.com/svn/releases-repository 
    * http://gwt-youtube-api.googlecode.com/svn/snapshots-repository
+   * https://oss.sonatype.org/content/groups/staging/
    into your [http://gwt-youtube-api.googlecode.com/svn/wiki/files/settings.xml settings.xml]
 
  # Add Google dependency using inherit using following line into your XYZ.gwt.xml
