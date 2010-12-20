@@ -7,5 +7,6 @@
    * [EmbededPlayer Embeded player]
    * [GDataAPI YouTube GData API]
    * [CodeReview Project contribution]
+   * [ReleaseNotes Release notes]
  * [SampleApplication GWT YouTube Samples]
  * [GDataMigration Google APIs for GWT]
