@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metadata>
+<metadata modelVersion="1.1.0">
   <groupId>com.google</groupId>
   <artifactId>gwt-youtube-api</artifactId>
   <version>1.0.4-SNAPSHOT</version>
   <versioning>
     <snapshot>
-      <timestamp>20110615.112838</timestamp>
-      <buildNumber>1</buildNumber>
+      <timestamp>20110615.212642</timestamp>
+      <buildNumber>2</buildNumber>
     </snapshot>
-    <lastUpdated>20110615112839</lastUpdated>
+    <lastUpdated>20110615212642</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.0.4-20110615.212642-2</value>
+        <updated>20110615212642</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.0.4-20110615.212642-2</value>
+        <updated>20110615212642</updated>
+      </snapshotVersion>
+    </snapshotVersions>
   </versioning>
 </metadata>
