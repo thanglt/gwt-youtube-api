@@ -2,12 +2,11 @@
 <metadata>
   <groupId>com.google</groupId>
   <artifactId>gwt-youtube-api</artifactId>
-  <version>1.0.3-SNAPSHOT</version>
   <versioning>
     <versions>
       <version>1.0.3-SNAPSHOT</version>
       <version>1.0.4-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20110615112838</lastUpdated>
+    <lastUpdated>20110615212649</lastUpdated>
   </versioning>
 </metadata>
