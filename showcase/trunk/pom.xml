@@ -1,0 +1,109 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.google</groupId>
+	<artifactId>gwt-youtube-api-showcase</artifactId>
+	<version>1.0.4-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>GWT-youtube-api showcase</name>
+
+	<parent>
+		<groupId>sk.seges.acris</groupId>
+		<artifactId>acris-os-parent</artifactId>
+		<version>1.2.1-SNAPSHOT</version>
+	</parent> 
+	
+	<properties>
+	</properties>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>YouTubeSnapshots</id>
+			<name>YouTubeSnapshots</name>
+			<url>https://gwt-youtube-api.googlecode.com/svn/snapshots-repository</url>
+		</snapshotRepository>
+		<repository>
+			<id>YouTubeReleases</id>
+			<name>YouTubeReleases</name>
+			<url>https://gwt-youtube-api.googlecode.com/svn/releases-repository</url>
+		</repository>
+	</distributionManagement>
+
+	<scm>
+		<connection>scm:svn:http://gwt-youtube-api.googlecode.com/svn/showcase</connection>
+		<developerConnection>scm:svn:https://gwt-youtube-api.googlecode.com/svn/showcase</developerConnection>
+		<url>http://gwt-youtube-api.googlecode.com/svn/showcase</url>
+	</scm>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>${basedir}/src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>${basedir}/src/main/webapp</directory>
+			</resource>
+		</resources>
+		<outputDirectory>${project.build.directory}/${project.artifactId}-${project.version}/WEB-INF/classes</outputDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+					<compilerArgument>-proc:none</compilerArgument>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>${maven-resources-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/${project.artifactId}-${project.version}</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}/src/main/webapp</directory>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<!-- AcrIS dependency -->
+		<!--dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>gwt-youtube-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>gwt-youtube-api</artifactId>
+			<version>${project.version}</version>
+			<classifier>sources</classifier>
+		</dependency-->
+
+		<!-- GWT dependencies -->
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-user</artifactId>
+			<version>${gwt.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-servlet</artifactId>
+			<version>${gwt.version}</version>
+		</dependency>
+
+	</dependencies>
+</project>
