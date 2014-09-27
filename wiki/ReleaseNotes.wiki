@@ -7,6 +7,8 @@
   * using AcrIS 2.0.0
   * correct compiler plugin
 
+Download here: http://gwt-youtube-api.googlecode.com/svn/releases-repository/com/google/gwt-youtube-api/1.0.6/
+
 = 1.0.3 =
 
 == Changeset ==
