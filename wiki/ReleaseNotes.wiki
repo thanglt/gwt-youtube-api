@@ -2,7 +2,12 @@
 
 = Current version =
 
-1.0.3-SNAPSHOT
+= 1.0.6 =
+  * GWT 2.6
+  * using AcrIS 2.0.0
+  * correct compiler plugin
+
+= 1.0.3 =
 
 == Changeset ==
  * Migrated to GWT 2.1.1
